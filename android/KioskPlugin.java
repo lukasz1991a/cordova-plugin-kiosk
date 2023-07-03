@@ -26,32 +26,33 @@ public class KioskPlugin extends CordovaPlugin {
     public static final String IS_IN_KIOSK = "isInKiosk";
     public static final String IS_SET_AS_LAUNCHER = "isSetAsLauncher";
     public static final String SET_ALLOWED_KEYS = "setAllowedKeys";
-    
+
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         try {
             if (IS_IN_KIOSK.equals(action)) {
-                
+
                 callbackContext.success(Boolean.toString(KioskActivity.running));
                 return true;
-                
+
             } else if (IS_SET_AS_LAUNCHER.equals(action)) {
-                
+
                 String myPackage = cordova.getActivity().getApplicationContext().getPackageName();
                 callbackContext.success(Boolean.toString(myPackage.equals(findLauncherPackageName())));
                 return true;
-                
+
             } else if (EXIT_KIOSK.equals(action)) {
-                
+
+                KioskActivity.waitingOnExit = 200;
                 Intent intent = new Intent(Intent.ACTION_MAIN);
                 intent.addCategory(Intent.CATEGORY_HOME);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                
+
                 Intent chooser = Intent.createChooser(intent, "Select destination...");
                 if (intent.resolveActivity(cordova.getActivity().getPackageManager()) != null) {
                     cordova.getActivity().startActivity(chooser);
                 }
-                
+
                 callbackContext.success();
                 return true;
                 

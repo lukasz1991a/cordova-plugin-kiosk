@@ -12,8 +12,8 @@ Escape from the app is possible only using javascript call `KioskPlugin.exitKios
 or by uninstalling the app using `adb`. (Keeping USB debug allowed necessary.)
 If the application starts as usual (not as a launcher), no restrictions are applied.
 
-* Official plugin website: https://github.com/hkalina/cordova-plugin-kiosk
-* Example app: https://github.com/hkalina/cordova-kiosk-demo
+* Official plugin website: https://github.com/lukasz1991a/cordova-plugin-kiosk
+* Example app: https://github.com/lukasz1991a/cordova-kiosk-demo
 
 This plugin is for Android platform only. For kiosk on iOS platform check its Guided Access feature.
 
@@ -24,11 +24,11 @@ By adding this Cordova plugin the Cordova app becomes a homescreen (also known a
 
 To add plugin into existing Cordova / Phonegap application use:
 
-    cordova plugin add https://github.com/hkalina/cordova-plugin-kiosk.git
+    cordova plugin add https://github.com/lukasz1991a/cordova-plugin-kiosk.git
 
 To add specific version of this plugin (like `v2.0`) use:
 
-    cordova plugin add https://github.com/hkalina/cordova-plugin-kiosk.git#v2.0
+    cordova plugin add https://github.com/lukasz1991a/cordova-plugin-kiosk.git#v2.0
 
 Android platform files (like `AndroidManifest.xml`) should be updated immediately. If you will modify plugin code, you will need to re-add android platform to plugin modifications take effect:
 
@@ -62,7 +62,7 @@ The device is effectively locked only when both methods returns `true`. When the
 
 For list of keycode values check KeyEvent reference: https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0
 
-For complete example application check: https://github.com/hkalina/cordova-kiosk-demo
+For complete example application check: https://github.com/lukasz1991a/cordova-kiosk-demo
 
 Tips
 ----
